@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions</title>
+    <link rel="icon" href="/static/images/fav_icon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+padding: 0;
+font-family: "Poppins", sans-serif;
+}
+/* Navbar Container */
+.navbar {
+background-color: transparent; /* Start with a transparent background */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+width: 100%;
+z-index: 1000;
+transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.nav-link {
+color: #FFFFFF;
+}
+
+.navbar.scrolled {
+background-color: #000; /* Set to black when scrolled */
+}
+.navbar-expanded {
+background-color: #000; /* Black when toggler is clicked */
+}
+
+.navbar.fixed-top {
+position: fixed;
+top: 0;
+}
+
+/* Logo Styling */
+.logo {
+height: 70px;
+vertical-align: middle;
+}
+
+.brand-text {
+color: white;
+font-size: 24px;
+font-weight: bold;
+margin-left: 10px;
+vertical-align: middle;
+}
+
+.tagline {
+color: #ccc;
+font-size: 12px;
+display: block;
+}
+
+/* Navigation Links Container */
+.navbar-links {
+list-style: none;
+display: flex;
+margin: 0;
+gap: 20px; /* Adds space between nav links */
+}
+
+/* Navigation Links Styling */
+.navbar-links li {
+margin: 0; /* Reset right margin to avoid additional spacing */
+}
+
+.navbar-links a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+transition: color 0.3s;
+padding: 10px 15px; /* Add padding around links for better spacing */
+}
+
+/* Hover effect for nav links */
+.navbar-links a:hover {
+color: #9519C1;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+display: none; /* Initially hidden */
+background: none;
+border: none;
+color: white;
+font-size: 24px;
+cursor: pointer;
+}
+
+.navbar-toggler i {
+display: inline-block;
+font-size: 24px;
+color: white;
+}
+
+/* Show toggler for screens up to 1024px */
+@media (max-width: 1024px) {
+.navbar-toggler {
+display: block;
+}
+
+.navbar-links {
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 0;
+background-color: #000;
+width: 100%;
+height: 100vh;
+display: none;
+gap: 20px; /* Adds space between nav links in mobile view */
+padding-top: 20px; /* Adds padding to the top for better spacing */
+}
+
+.navbar-links li {
+margin: 20px 0; /* Adds vertical margin for better spacing */
+text-align: center;
+}
+
+.navbar-links.show {
+display: flex;
+}
+}
+
+/* Active Link and Hover Effects */
+.navbar-nav .nav-link.active {
+border-bottom: 2px solid #9519C1;
+}
+
+.navbar-nav .nav-link:hover {
+color: #9519C1;
+}
+
+/* Navbar Brand Text */
+.navbar-brand {
+font-size: 1.5rem;
+font-weight: bold;
+color: #fff;
+}
+/* Circle Container for Menu Icon */
+.menu-icon-circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #fff; /* White border for the circle */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Lines inside the circle */
+.menu-line {
+    height: 2px;
+    background-color: #fff; /* White color for the lines */
+    margin: 3px 0; /* Spacing between lines */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Adjust line widths */
+.menu-line-short {
+    width: 12px;
+    margin-right: 12px;
+}
+
+.menu-line-medium {
+    width: 12px;
+    margin-left: 12px;
+}
+
+.menu-line-long {
+    width: 28px;
+}
+
+/* Hover effect for the circle */
+.menu-icon-circle:hover {
+    background-color: #9519C1; /* Purple background on hover */
+    border-color: #9519C1; /* Change border color to purple */
+}
+
+/* Change line color on hover */
+.menu-icon-circle:hover .menu-line {
+    background-color: #fff; /* Change line color to white */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-bar {
+        display: none; /* Hide menu bar on smaller screens */
+    }
+}
+@media (max-width: 768px) {
+    .menu-bar {
+        display: none; /* Hide the menu bar on screens smaller than 768px */
+    }
+    .menu-modal {
+        display: none;
+    }
+}    
+/* Modal */
+.menu-modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Full black background */
+    background: 
+        radial-gradient(circle at bottom left, rgba(128, 0, 128, 1), rgba(0, 0, 0, 0) 70%),
+        black; /* Gradient on top of the black background */
+    z-index: 9999;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+.left-section {
+    width: 60%;
+    padding: 60px 50px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically in the left section */
+}
+
+.left-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 250;
+}
+.left-section p {
+    font-size: 18px;
+   text-align: justify;
+    font-weight: 250;
+}
+
+.right-section {
+    width: 35%;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list {
+    list-style: none;
+    font-size: 2rem;
+    line-height: 2.5;
+}
+
+.menu-list li {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.menu-list li:hover {
+    color: #9519C1;
+}
+
+/* Close Modal Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.menu-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction when modal is visible */
+}
+.navbar-toggler {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent; /* Optional: make the background transparent if desired */
+}
+
+.navbar-toggler:hover {
+    background: none !important; /* Optional: ensure hover styles don't show a background */
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.hidden-content {
+    display: none;
+}
+.content-container {
+            padding: 30px 15px;
+        }
+
+        .content-section {
+            background: #1a1a1a; /* Dark gray for contrast */
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 26px;
+            color: #9519C1; /* Bright red for emphasis */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #9519C1;
+            padding-bottom: 10px;
+        }
+
+        .content-section p,
+        .content-section ul {
+            font-size: 16px;
+            color: #eaeaea;
+        }
+
+        .content-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .content-section a {
+            color: #f5a623; /* Bright orange for links */
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #111; /* Slightly lighter black for footer */
+            color: #888;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .custom-contact-button {
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #FFFFFF; /* White border */
+    border-radius: 0px; /* No border radius */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Show pointer on hover */
+    transition: all 0.3s ease; /* Add a smooth hover effect */
+    width: 30%;
+}
+
+.custom-contact-button:hover {
+    background-color: white; /* Change background to white on hover */
+    color: black; /* Change text color to black on hover */
+}
+.contact-info {
+            font-size: 42px; /* Adjust font size as needed */
+            line-height: 1.8; /* Increase spacing between lines */
+            color: #FFFFFF; /* White text color */
+            font-weight: 400;
+        }
+.contact-info-container {
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+        .blog-card {
+           
+           border-radius: 15px;
+           padding: 10px;
+           transition: transform 0.3s ease;
+       }
+
+       .blog-card img {
+           width: 100%;
+           border-radius: 10px;
+           margin-bottom: 10px;
+       }
+
+       .blog-card h5 {
+           font-size: 1.2rem;
+           margin-bottom: 5px;
+           color: #fff;
+       }
+
+       .blog-card .blog-author {
+           font-size: 0.9rem;
+           color: #bbb;
+           
+       }
+
+       /* Hover effect */
+       .blog-card:hover {
+           transform: scale(1.05);
+       }
+       ::-webkit-scrollbar {
+            width: 8px; /* Adjust the width of the scrollbar */
+        }
+
+        /* Track (background of the scrollbar) */
+        ::-webkit-scrollbar-track {
+            background: #f5f5f5; /* Light grey track */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Thumb (scroll handle) */
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Dark grey thumb */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Darker grey when hovered */
+        }
+
+        /* Optional: Add scrollbar for Firefox */
+        body {
+            scrollbar-width: thin; /* Thin scrollbar */
+            scrollbar-color: #888 #f5f5f5; /* Thumb color | Track color */
+        }
+</style>
+<body>
+    
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'images/logo (2).png' %}" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link" >About Us</a></li>
+                    <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="{% url 'blog_page' %}"  class="nav-link">Blogs</a></li>
+                    <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link">Contact Us</a></li>
+                
+                </ul>
+             <!-- Navigation Bar -->
+       
+             <div class="menu-bar" id="menuBar" style="margin-left: 80px;">
+                <div class="menu-icon-circle">
+                    <span class="menu-line menu-line-short"></span>
+                    <span class="menu-line menu-line-long"></span>
+                    <span class="menu-line menu-line-medium"></span>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Full Screen Menu Modal -->
+        <div class="menu-modal" id="menuModal">
+            <div class="left-section" id="leftSection">
+                <!-- Default content for the left section -->
+                <h1>Our Impact</h1>
+                <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                    website development services. Our dedicated team specializes in crafting captivating web experiences
+                    that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                    marketing strategies, or exceptional branding services, we've got you covered</p>
+            </div>
+            <div class="right-section" style="font-weight: 250;">
+                <ul class="menu-list">
+                    <li data-target="impactContent">Impact</li>
+                    <li data-target="testimonialsContent">Testimonials</li>
+                    <li data-target="clientsContent">Clients</li>
+                    <li data-target="insightsContent">Insights</li>
+                    <li data-target="contactContent">Contact</li>
+                </ul>
+            </div>
+            <span class="close-modal" id="closeModal">&times;</span>
+        </div>
+
+        <!-- Testimonial Content (Hidden by Default) -->
+        <div class="hidden-content" id="testimonialsContent">
+            <section class="container my-5">
+                <h1>Testimonials</h1>
+                <div class="row">
+                    <!-- Testimonial 1 -->
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3" style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Great service—reliable, efficient, and budget-friendly, making them an excellent choice for any project!
+                                    "</p>
+                                <h5 class="text-white">- Arundas P R</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Testimonial 2 -->
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Very good service. Very good experience with the team."</p>
+                                <h5 class="text-white">- MAMAMIA LIFE SOLUTIONS PVT LTD</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Aswm designs  with affordable  Packages"</p>
+                                <h5 class="text-white">- Tshproi School of Creative and Technical Stuides</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Add more testimonials as needed -->
+        </div>
+
+        <!-- Impact Content (Hidden by Default) -->
+        <div class="hidden-content" id="impactContent">
+            <h1>Our Impact</h1>
+            <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                website development services. Our dedicated team specializes in crafting captivating web experiences
+                that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                marketing strategies, or exceptional branding services, we've got you covered.</p>
+
+        </div>
+        <div class="hidden-content" id="clientsContent">
+            <h1>Our Clients</h1>
+
+            <div class="container mt-5">
+                <div class="row text-center">
+                    {% for logo in logos %}
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="{{ logo.image.url }}" alt="{{ logo.alt_text }}" class="img-fluid" width="100px">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="hidden-content" id="insightsContent">
+            <h1>Our Insight</h1>
+            <div class="container mt-5">
+                <div class="row">
+                    {% for blog in bloge %}
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="blog-card p-3">
+                            {% if blog.image %}
+                            <a href="{% url 'blog_details' blog.id blog.slug %}">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-image">
+                            </a>
+                                
+                            {% else %}
+                                <p>No Image</p>
+                            {% endif %}
+                            <a href="{% url 'blog_details' blog.id blog.slug %}" style="text-decoration: none; color: #FFFFFF;">
+                                <div class="blog-title mt-3" style="font-size: 1.4rem; font-weight: 250;">{{ blog.title }}</div>
+            
+                            </a>
+                            <div class="blog-meta d-flex justify-content-between mt-3">
+                                <div class="blog-author" style="font-weight: 250;"><strong>Author:</strong> {{ blog.author }}</div>
+                                <div class="blog-date" style="font-weight: 250;">{{ blog.created_at|date:"d/m/Y" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="hidden-content" id="contactContent">
+            <h1>Our Contact</h1>
+            <p>Please feel free to share your thoughts and we can discuss it over a cup of tea.</p>
+                <a href="{% url 'contact_us' %}" class="btn custom-contact-button">Contact Us</a>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="contact-info-container">
+                                <div class="contact-info">
+                                    <p style="font-size: 32px;">+91 80756 08837</p>
+                                    <p style="font-size: 32px;">info@softverses.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+        </div>
+    
+        <!-- Add similar content for Clients, Partnership, Insights, and Contact -->
+    
+    </header>
+
+
+
+
+    <div class="container content-container " style="margin-top: 120px;">
+        <!-- Section 1 -->
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>
+                This website is operated by Softverses IT Solutions. Throughout the site, the terms “we”, “us” and “our” refer to Softverses IT Solutions LLP.
+                By accessing or using any part of the site, you agree to be bound by these Terms of Service. 
+                If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.
+            </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="content-section">
+            <h2>Cancellation and Refund</h2>
+            <ul>
+                <li>The client agrees to pay a non-refundable advance payment of 50% of the total project cost before the commencement of any work.</li>
+                <li>The remaining 50% payment must be made upon successful completion and delivery of the project.</li>
+                <li>Any changes to the project scope may result in additional charges and an adjustment to the project timeline.</li>
+                <li>If the client terminates the project during the development stage, the client agrees to pay 100% of the total project fee.</li>
+            </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="content-section">
+            <h2>Privacy Policy</h2>
+            <p>
+                The client warrants that any text, images, multimedia, or other content provided for the project are owned by them or that they have obtained all necessary permissions and licenses for their use.
+            </p>
+            <p>
+                Upon full payment, the client will own the final website design and code. However, Softverses IT Solutions LLP retains the right to reuse and showcase the project as part of our portfolio.
+            </p>
+            <p>
+                Both parties agree to keep confidential any proprietary or sensitive information shared during the project.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Softverses IT Solutions LLP. All Rights Reserved.</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap JS -->
+<!-- jQuery for click event handling -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarLinks = document.querySelector(".navbar-links");
+
+    navbarToggler.addEventListener("click", function() {
+        navbarLinks.classList.toggle("show");
+    });
+});
+
+    $(document).ready(function(){
+        // When a service card is clicked, add 'active' class and remove it from others
+        $('.service-card').on('click', function() {
+            $('.service-card').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+    
+
+    const menuBar = document.getElementById('menuBar');
+const menuModal = document.getElementById('menuModal');
+const closeModal = document.getElementById('closeModal');
+const leftSection = document.getElementById('leftSection');
+
+// Open the modal when the menu icon is clicked
+menuBar.addEventListener('click', () => {
+    menuModal.classList.add('show');
+});
+
+// Close the modal with fade effect
+closeModal.addEventListener('click', () => {
+    menuModal.classList.remove('show');
+});
+
+// Get all menu items from the right section
+const menuItems = document.querySelectorAll('.menu-list li');
+
+// Function to update left section content
+function updateLeftContent(contentId) {
+    const content = document.getElementById(contentId);
+    leftSection.innerHTML = content.innerHTML; // Replace left section with the new content
+}
+
+// Loop through each menu item and add a mouseover event
+menuItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        // Get the target content ID from data-target attribute
+        const targetContentId = item.getAttribute('data-target');
+        updateLeftContent(targetContentId);
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+        // Get the navbar and toggler elements
+        const navbar = document.querySelector('.navbar');
+        const toggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        // Function to toggle the 'scrolled' class based on scroll position
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Toggle background color on toggler click
+        toggler.addEventListener('click', function() {
+            if (!navbarCollapse.classList.contains('show')) {
+                navbar.classList.add('navbar-expanded');
+            } else {
+                navbar.classList.remove('navbar-expanded');
+            }
+        });
+
+        // Remove background color when the menu collapses
+        navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+            navbar.classList.remove('navbar-expanded');
+        });
+
+        // Add background color when the menu is shown
+        navbarCollapse.addEventListener('shown.bs.collapse', function() {
+            navbar.classList.add('navbar-expanded');
+        });
+    });
+</script>
+</body>
+</html>

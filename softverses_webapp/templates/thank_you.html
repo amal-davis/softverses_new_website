@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You </title>
+    <link rel="icon" href="/static/images/fav_icon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+padding: 0;
+font-family: "Poppins", sans-serif;
+}
+/* Navbar Container */
+.navbar {
+    background-color: transparent; /* Start with a transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+.navbar.scrolled {
+    background-color: #000; /* Set to black when scrolled */
+}
+.navbar-expanded {
+    background-color: #000; /* Black when toggler is clicked */
+}
+
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+}
+
+/* Logo Styling */
+.logo {
+    height: 70px;
+    vertical-align: middle;
+}
+
+.brand-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.tagline {
+    color: #ccc;
+    font-size: 12px;
+    display: block;
+}
+
+/* Navigation Links Container */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 20px; /* Adds space between nav links */
+}
+
+/* Navigation Links Styling */
+.navbar-links li {
+    margin: 0; /* Reset right margin to avoid additional spacing */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px 15px; /* Add padding around links for better spacing */
+}
+
+/* Hover effect for nav links */
+.navbar-links a:hover {
+    color: #9519C1;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    display: none; /* Initially hidden */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar-toggler i {
+    display: inline-block;
+    font-size: 24px;
+    color: white;
+}
+
+/* Show toggler for screens up to 1024px */
+@media (max-width: 1024px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        gap: 20px; /* Adds space between nav links in mobile view */
+        padding-top: 20px; /* Adds padding to the top for better spacing */
+    }
+
+    .navbar-links li {
+        margin: 20px 0; /* Adds vertical margin for better spacing */
+        text-align: center;
+    }
+
+    .navbar-links.show {
+        display: flex;
+    }
+}
+
+/* Active Link and Hover Effects */
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid #9519C1;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #9519C1;
+}
+
+/* Navbar Brand Text */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+</style>
+<body>
+   
+    
+
+
+
+
+
+
+
+
+    <div style="text-align: center; padding: 50px;">
+        <h1>Thank You!</h1>
+        <p>Your message has been received. We will get back to you shortly.</p>
+        <p>You will be redirected to the contact page in 5 seconds...</p>
+        <p>If you are not redirected, <a href="{% url 'contact' %}">click here</a>.</p>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Automatically redirect to the contact page after 5 seconds
+        setTimeout(() => {
+            window.location.href = "{% url 'contact_us' %}";
+        }, 5000);  // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>

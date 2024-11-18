@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softverses IT Solutions LLP</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="/static/images/fav_icon.png" type="image/png">
+    <!-- <link rel="stylesheet" href="{% static 'css/contact.css' %}"> -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/small_logo.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    /* Global styles */
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        font-family: "Poppins", sans-serif;
+    }
+
+
+
+/* Hero Section */
+.hero-section {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Ensures no overflow issues */
+}
+
+/* Hero Content */
+.hero-content {
+    z-index: 2;
+    color: #fff;
+    text-align: left; /* Align text to the left on larger screens */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-content .btn-custom {
+    background: linear-gradient(90deg, #E74CBF 0%, #3E026F 100%);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+}
+
+.hero-content .btn-custom:hover {
+    background: linear-gradient(90deg, #C540A3 0%, #2D014C 100%);
+}
+
+/* Hero Image */
+.hero-image {
+    width: 90%; /* Default width (scaled with screen size) */
+    max-width: 400px; /* Restrict the maximum width */
+    height: auto;
+    z-index: 1;
+}
+
+/* Gradient Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Tablet landscape and below */
+    .hero-section {
+        height: auto; /* Allow auto height for smaller screens */
+        flex-wrap: wrap; /* Stack content and image */
+        padding: 20px; /* Add padding to avoid overlap */
+    }
+
+    .hero-content {
+        text-align: center; /* Center-align text for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-image {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) { /* Mobile screens */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content .btn-custom {
+        font-size: 0.9rem; /* Reduce button size */
+        padding: 8px 15px;
+    }
+
+    .hero-image {
+        width: 100%; /* Full width for the image */
+        max-width: 250px;
+        margin: 0 auto; /* Center the image */
+    }
+
+    .hero-section {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+}
+
+
+
+    .centered-section {
+        position: relative;
+        padding: 60px 0;
+        text-align: center;
+        background-color: black;
+        overflow: hidden;
+        /* Ensures the pseudo-elements don’t affect content layout */
+    }
+
+
+
+    .nav-link {
+        color: #FFFFFF;
+    }
+
+    /* Menu Bar Container */
+    .menu-bar {
+        cursor: pointer;
+    }
+
+    /* Circle Container for Menu Icon */
+    .menu-icon-circle {
+        width: 45px;
+        height: 45px;
+        border: 2px solid #fff;
+        /* White border for the circle */
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    /* Lines inside the circle */
+    .menu-line {
+        height: 2px;
+        background-color: #fff;
+        /* White color for the lines */
+        margin: 3px 0;
+        /* Spacing between lines */
+        transition: all 0.3s ease;
+        /* Smooth transition for hover */
+    }
+
+    /* Adjust line widths */
+    .menu-line-short {
+        width: 12px;
+        margin-right: 12px;
+    }
+
+    .menu-line-medium {
+        width: 12px;
+        margin-left: 12px;
+    }
+
+    .menu-line-long {
+        width: 28px;
+    }
+
+    /* Hover effect for the circle */
+    .menu-icon-circle:hover {
+        background-color: #9519C1;
+        /* Purple background on hover */
+        border-color: #9519C1;
+        /* Change border color to purple */
+    }
+
+    /* Change line color on hover */
+    .menu-icon-circle:hover .menu-line {
+        background-color: #fff;
+        /* Change line color to white */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .menu-bar {
+            display: none;
+            /* Hide menu bar on smaller screens */
+        }
+    }
+
+
+
+    @media (max-width: 768px) {
+        .menu-bar {
+            display: none;
+            /* Hide the menu bar on screens smaller than 768px */
+        }
+
+        .menu-modal {
+            display: none;
+        }
+    }
+
+    /* Modal */
+    .menu-modal {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        /* Full black background */
+        background:
+            radial-gradient(circle at bottom left, rgba(128, 0, 128, 1), rgba(0, 0, 0, 0) 70%),
+            black;
+        /* Gradient on top of the black background */
+        z-index: 9999;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        pointer-events: none;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+
+    .left-section {
+        width: 60%;
+        padding: 60px 50px;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        /* Stack content vertically in the left section */
+    }
+
+    .left-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 250;
+    }
+
+    .left-section p {
+        font-size: 18px;
+        text-align: justify;
+        font-weight: 250;
+    }
+
+    .right-section {
+        width: 35%;
+        padding: 60px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-list {
+        list-style: none;
+        font-size: 2rem;
+        line-height: 2.5;
+    }
+
+    .menu-list li {
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .menu-list li:hover {
+        color: #9519C1;
+    }
+
+    /* Close Modal Button */
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    /* Testimonial card styling */
+    .testimonial-card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-card img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    /* Hidden content container */
+    .hidden-content {
+        display: none;
+    }
+
+    .menu-modal.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        /* Enable interaction when modal is visible */
+    }
+
+    /* Media Query for Smaller Screens - Hides the right menu section */
+    @media (max-width: 768px) {
+        .right-section {
+            display: none;
+        }
+
+        .left-section {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .menu-modal {
+            justify-content: center;
+        }
+    }
+
+    .accordion-header .accordion-button {
+        background-color: #000;
+        /* Black background */
+        color: #fff;
+        /* White text */
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border: none !important;
+        /* No borders */
+        outline: none !important;
+        position: relative;
+        /* For positioning the icon */
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: 250;
+    }
+
+    .client-carousel .item {
+        display: flex;
+        justify-content: center;
+        /* Center align the images */
+        align-items: center;
+        padding: 10px;
+        /* Add padding for spacing */
+    }
+
+    .logo-image {
+        width: 100%;
+        /* Make logos responsive */
+        max-width: 200px;
+        /* Limit maximum width */
+        object-fit: contain;
+        /* Ensure logos fit within the bounds */
+    }
+    .custom-contact-button {
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #FFFFFF; /* White border */
+    border-radius: 0px; /* No border radius */
+    color: #FFFFFF; /* White text */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    font-size: 16px; /* Adjust font size */
+    cursor: pointer; /* Show pointer on hover */
+    transition: all 0.3s ease; /* Add a smooth hover effect */
+    width: 30%;
+}
+
+.custom-contact-button:hover {
+    background-color: white; /* Change background to white on hover */
+    color: black; /* Change text color to black on hover */
+}
+.contact-info {
+            font-size: 42px; /* Adjust font size as needed */
+            line-height: 1.8; /* Increase spacing between lines */
+            color: #FFFFFF; /* White text color */
+            font-weight: 400;
+        }
+.contact-info-container {
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+        .blog-card {
+           
+           border-radius: 15px;
+           padding: 10px;
+           transition: transform 0.3s ease;
+       }
+
+       .blog-card img {
+           width: 100%;
+           border-radius: 10px;
+           margin-bottom: 10px;
+       }
+
+       .blog-card h5 {
+           font-size: 1.2rem;
+           margin-bottom: 5px;
+           color: #fff;
+       }
+
+       .blog-card .blog-author {
+           font-size: 0.9rem;
+           color: #bbb;
+           
+       }
+
+       /* Hover effect */
+       .blog-card:hover {
+           transform: scale(1.05);
+       }
+       ::-webkit-scrollbar {
+            width: 8px; /* Adjust the width of the scrollbar */
+        }
+
+        /* Track (background of the scrollbar) */
+        ::-webkit-scrollbar-track {
+            background: #f5f5f5; /* Light grey track */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Thumb (scroll handle) */
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Dark grey thumb */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Darker grey when hovered */
+        }
+
+        /* Optional: Add scrollbar for Firefox */
+        body {
+            scrollbar-width: thin; /* Thin scrollbar */
+            scrollbar-color: #888 #f5f5f5; /* Thumb color | Track color */
+        }
+</style>
+</head>
+
+<body>
+    <!-- Transparent Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a href="{% url 'home' %}" class="navbar-brand">
+                    <img src="{% static 'images/logo (2).png' %}" alt="Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" class=" nav-link"
+                                style="border-bottom: 0.5px solid #9519C1;">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                        <li class="nav-item"><a href="{% url 'blog_page' %}" class="nav-link">Blogs</a></li>
+                        <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link">Contact Us</a></li>
+
+                    </ul>
+                    <!-- Navigation Bar -->
+
+                    <div class="menu-bar" id="menuBar" style="margin-left: 80px;">
+                        <div class="menu-icon-circle">
+                            <span class="menu-line menu-line-short"></span>
+                            <span class="menu-line menu-line-long"></span>
+                            <span class="menu-line menu-line-medium"></span>
+                        </div>
+                    </div>
+
+
+        </nav>
+
+        <!-- Full Screen Menu Modal -->
+        <div class="menu-modal" id="menuModal">
+            <div class="left-section" id="leftSection">
+                <!-- Default content for the left section -->
+                <h1>Our Impact</h1>
+                <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                    website development services. Our dedicated team specializes in crafting captivating web experiences
+                    that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                    marketing strategies, or exceptional branding services, we've got you covered</p>
+            </div>
+            <div class="right-section">
+                <ul class="menu-list" style="font-weight: 250;">
+                    <li data-target="impactContent">Impact</li>
+                    <li data-target="testimonialsContent">Testimonials</li>
+                    <li data-target="clientsContent">Clients</li>
+                    <li data-target="insightsContent">Insights</li>
+                    <li data-target="contactContent">Contact</li>
+                </ul>
+            </div>
+            <span class="close-modal" id="closeModal">&times;</span>
+        </div>
+
+        <!-- Testimonial Content (Hidden by Default) -->
+        <div class="hidden-content" id="testimonialsContent">
+            <section class="container my-5">
+                <h1>Testimonials</h1>
+                <div class="row">
+                    <!-- Testimonial 1 -->
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3" style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Great service—reliable, efficient, and budget-friendly, making them an excellent choice for any project!
+                                    "</p>
+                                <h5 class="text-white">- Arundas P R</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Testimonial 2 -->
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Very good service. Very good experience with the team."</p>
+                                <h5 class="text-white">- MAMAMIA LIFE SOLUTIONS PVT LTD</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                            <div class="card-body">
+                                <p class="text-white">"Aswm designs  with affordable  Packages"</p>
+                                <h5 class="text-white">- Tshproi School of Creative and Technical Stuides</h5>
+                                <div class="text-warning">
+                                    <!-- 5 Static Stars -->
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small class="text-secondary">Posted on Google</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Add more testimonials as needed -->
+        </div>
+
+        <!-- Impact Content (Hidden by Default) -->
+        <div class="hidden-content" id="impactContent">
+            <h1>Our Impact</h1>
+            <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                website development services. Our dedicated team specializes in crafting captivating web experiences
+                that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                marketing strategies, or exceptional branding services, we've got you covered.</p>
+
+        </div>
+        <div class="hidden-content" id="clientsContent">
+            <h1>Our Clients</h1>
+
+            <div class="container mt-5">
+                <div class="row text-center">
+                    {% for logo in logos %}
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <img src="{{ logo.image.url }}" alt="{{ logo.alt_text }}" class="img-fluid" width="100px">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+        
+        <div class="hidden-content" id="insightsContent">
+            <h1>Our Insight</h1>
+            <div class="container mt-5">
+                <div class="row">
+                    {% for blog in bloge %}
+                    <div class="col-12 col-md-6 mb-4">
+                        <div class="blog-card p-3">
+                            {% if blog.image %}
+                            <a href="{% url 'blog_details' blog.id blog.slug %}">
+                                <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-image">
+                            </a>
+                                
+                            {% else %}
+                                <p>No Image</p>
+                            {% endif %}
+                            <a href="{% url 'blog_details' blog.id blog.slug %}" style="text-decoration: none; color: #FFFFFF;">
+                                <div class="blog-title mt-3" style="font-size: 1.4rem; font-weight: 250;">{{ blog.title }}</div>
+            
+                            </a>
+                            <div class="blog-meta d-flex justify-content-between mt-3">
+                                <div class="blog-author" style="font-weight: 250;"><strong>Author:</strong> {{ blog.author }}</div>
+                                <div class="blog-date" style="font-weight: 250;">{{ blog.created_at|date:"d/m/Y" }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="hidden-content" id="contactContent">
+            <h1>Our Contact</h1>
+            <p>Please feel free to share your thoughts and we can discuss it over a cup of tea.</p>
+                <a href="{% url 'contact_us' %}" class="btn custom-contact-button">Contact Us</a>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <div class="contact-info-container">
+                                <div class="contact-info">
+                                    <p style="font-size: 32px;">+91 80756 08837</p>
+                                    <p style="font-size: 32px;">info@softverses.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+        </div>
+
+        <!-- Add similar content for Clients, Partnership, Insights, and Contact -->
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: url(/static/images/bg.png) no-repeat center center;">
+        <!-- Background image with a gradient overlay -->
+        <div class="hero-overlay"></div>
+    
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 hero-content" style="margin-top: 120px;">
+                    <h1>Expert Web Development Services Await</h1>
+                    <a href="{% url 'services' %}" class="btn btn-custom">Explore <i
+                            class="ri-arrow-right-up-line"></i></a>
+                </div>
+                <!-- Hero Image -->
+                <div class="col-md-6 pt-5 text-center">
+                    <img src="{% static 'images/ball.png' %}" alt="Hero Image" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <section class="centered-section" style="background-color: #000;">
+        <div class="container">
+            <!-- Heading -->
+            {% if content %}
+            <h3 style="color: #fdf8ff; font-weight: 250;" class="title">{{ content.heading }}</h3>
+            <h1 style="font-weight: 400;" class="sub-title">{{ content.subheading }}</h1>
+
+            <!-- Subheading Paragraph -->
+            <p>{{ content.paragraph }}</p>
+
+            <!-- Explore Button -->
+            <a href="{{ content.button_link }}" class="btn btn-custom">
+                {{ content.button_text }} <i class="ri-arrow-right-up-line"></i>
+            </a>
+            {% else %}
+            <p>No content available.</p>
+            {% endif %}
+        </div>
+
+
+
+        <!-- Services Section -->
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <!-- First service box -->
+                <div class="col-md-4 pt-5">
+                    <div class="service-box">
+                        <!-- Image inside the service box -->
+                        <img src="{% static 'images/webapp.png' %}" alt="Web Development"
+                            class="service-image img-fluid">
+                    </div>
+                    <!-- Text and icon outside the service box -->
+                    <div class="service-link">
+                        <div class="service-titles">Web<br>Development</div>
+                        <div class="icon-circle">
+                            <a href="{% url 'web_development' %}" style="text-decoration: none;">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Second service box -->
+                <div class="col-md-4 pt-5">
+                    <div class="service-box">
+                        <!-- Image inside the service box -->
+                        <img src="{% static 'images/digi.png' %}" alt="Digital Marketing"
+                            class="service-image img-fluid">
+                    </div>
+                    <!-- Text and icon outside the service box -->
+                    <div class="service-link">
+                        <div class="service-titles">Digital<br>Marketing</div>
+                        <div class="icon-circle">
+                            <a href="{% url 'digital_marketing' %}" style="text-decoration: none;">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third service box -->
+                <div class="col-md-4 pt-5">
+                    <div class="service-box">
+                        <!-- Image inside the service box -->
+                        <img src="{% static 'images/brand.png' %}" alt="Branding" class="service-image img-fluid">
+                    </div>
+                    <!-- Text and icon outside the service box -->
+                    <div class="service-link">
+                        <div class="service-titles">Branding</div>
+                        <div class="icon-circle">
+                            <a href="{% url 'branding' %}" style="text-decoration: none;">
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="container" style="margin-top: 90px;">
+        <div class="owl-carousel owl-theme client-carousel">
+            {% for logo in logos %}
+            <div class="item">
+                {% if logo.image %}
+                <img src="{{ logo.image.url }}" alt="{{ logo.alt_text }}" class="logo-image">
+                {% else %}
+                <p>No logo</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Mission & Vision Section -->
+    <section class="mission-vision-section mt-5">
+        <div class="container">
+            {% for item in section %}
+            <div class="row align-items-center mb-5">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="section-title" style="font-weight: 400;">{{ item.title }}</h2>
+
+                        <a href="{{ item.link_url }}" class="arrow-link" style="text-decoration: none;">
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
+
+                    </div>
+                    <p class="section-description">{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+
+
+    <section class="services-sections">
+        <div class="container">
+            <h2 style="color: #fff; font-weight: 250;" class="title">Services</h2>
+            <h2 class="mb-5" style=" background: linear-gradient(93.89deg, #9519C1 40%, #FFFFFF 60%);
+        -webkit-background-clip: text;-webkit-text-fill-color: transparent; font-weight: 400;font-size: 1.8rem;">What
+                We Do</h2>
+            <div class="row">
+                <!-- Service 1 -->
+                <div class="col-6 col-md-4">
+                    <div class="service-card">
+                        <img src="{% static 'images/web.png' %}" alt="Web Development" class="img-fluid">
+                        <h4 class="service-titles">Web<br>Development</h4>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-6 col-md-4">
+                    <div class="service-card">
+                        <img src="{% static 'images/digital.png' %}" alt="Digital Marketing" class="img-fluid">
+                        <h4 class="service-titles">Digital<br>Marketing</h4>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-6 col-md-4">
+                    <div class="service-card">
+                        <img src="{% static 'images/branding.png' %}" alt="Branding" class="img-fluid">
+                        <h4 class="service-titles">Branding</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="service-card">
+                        <img src="{% static 'images/seo.png' %}" alt="SEO" class="img-fluid">
+                        <h4 class="service-titles">SEO</h4>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-6 col-md-4 active">
+                    <div class="service-card">
+                        <img src="{% static 'images/smm.png' %}" alt="SMM" class="img-fluid">
+                        <h4 class="service-titles">SMM</h4>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-6 col-md-4">
+                    <div class="service-card">
+                        <img src="{% static 'images/hosting.png' %}" alt="Web Hosting" class="img-fluid">
+                        <h4 class="service-titles">Web<br>Hosting</h4>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+
+    <!-- Various Types of Designs Section -->
+    <section class="designs-section">
+        <div class="container">
+            <!-- Title -->
+            <h2 class="title">Our Web Designs</h2>
+            <h2 class="sub-title">Various Types Of Designs</h2>
+            <div class="line-container">
+                <div class="line"></div>
+                <a href="{% url 'portfolio' %}" class="arrow-link" style="text-decoration: none;">
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+            </div>
+
+            <!-- Row of design images -->
+            <div class="row">
+                {% for design in designs %}
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="design-card">
+                        <img src="{{ design.image.url }}" alt="{{ design.alt_text }}" class="img-fluid">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="flow-section">
+        <div class="container position-relative">
+            <h2 class="title text-center">Process</h2>
+            <h2 class="sub-title text-center">How It Works Here</h2>
+
+            <div class="image-container position-relative">
+                <img src="{% static 'images/Flow.png' %}" alt="Flow Image Section" class="img-fluid">
+
+                <!-- Text for Emoji 1 -->
+                <div class="text-overlay step1">
+                    <span>Choose a <br> Service</span>
+                </div>
+
+                <!-- Text for Emoji 2 -->
+                <div class="text-overlay step2">
+                    <span>Request a <br> Meeting</span>
+                </div>
+
+                <!-- Text for Emoji 3 -->
+                <div class="text-overlay step3">
+                    <span>Receive <br> Custom Plan</span>
+                </div>
+
+                <!-- Text for Emoji 4 -->
+                <div class="text-overlay step4">
+                    <span>Let’s Make <br> it Happen</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Blog Slider Section -->
+    <section class="blog-slider-section mt-5">
+        <div class="container">
+            <!-- Title -->
+            <h2 class="title">Popular News</h2>
+            <h2 class="sub-title" style="text-align: center;">Latest From Our Blog</h2>
+            <div class="line-container">
+                <div class="line"></div>
+                <div class="arrow-buttons">
+                    <button class="owl-prev"><i class="fas fa-arrow-left"></i></button>
+                    <button class="owl-next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Blog Slider -->
+            <div class="container mt-5">
+                <div class="owl-carousel owl-theme blog-carousel">
+                    {% for blog in blogs %}
+                    <div class="item">
+                        <div class="blog-card">
+                            <div class="image-container">
+                                <a href="{% url 'blog_details' blog.id blog.slug %}">
+                                    {% if blog.image %}
+                                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                    {% else %}
+                                    <p>No Image Available</p>
+                                    {% endif %}
+                                </a>
+                                <span class="badge bg-purple date-badge">{{ blog.created_at|date:"j M, Y" }}</span>
+                            </div>
+                            <h5 class="blog-title">{{ blog.title }}</h5>
+                            <div class="blog-author">{{ blog.author.username }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="title">FAQ</div>
+            <h2 class="sub-title">Most common questions <span><br></span>about our services</h2>
+
+            <div class="accordion accordion-dark" id="accordionExample">
+                {% for faq in faqs %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false"
+                            aria-controls="collapse{{ forloop.counter }}">
+                            {{ faq.question }}
+                            <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                        </button>
+                    </h2>
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse"
+                        aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            {{ faq.answer }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="message-section py-5">
+        <div class="container">
+            <h2 class="title">Contact</h2>
+            <h2 class="sub-title" style="text-align: center;">Send us a message</h2>
+            <p class="text-white text-center mb-5 mt-5" style="font-weight: 250; font-size: 18px;">
+                With expertise spanning diverse industries and a dedicated team driving our efforts,
+                we’re ready to elevate your brand through a transformative digital journey.
+            </p>
+            <h4 class="text-white mb-4" style="font-weight: 350;">What happens next?</h4>
+
+            <div class="row py-5">
+                <div class="col-md-6">
+                    <div class="steps mt-5">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <p class="text-white">
+                                    One of our experts will elaborate on your requirements in detail,
+                                    followed by a call with follow-up questions and customized solutions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <p class="text-white">
+                                    When necessary, we shall execute a non-disclosure agreement (NDA)
+                                    to guarantee complete privacy and utmost protection for your confidential data.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <p class="text-white">
+                                    We provide a detailed project proposal, showing our strategy for how to develop the
+                                    custom
+                                    software matching your requirements. The document shall be in-depth regarding
+                                    project scope,
+                                    timeline, deliverables, and cost.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <p class="text-white">
+                                    We offer an elaborative project proposal containing our approach for custom software
+                                    development
+                                    unique to your individual requirements. It contains a detailed breakdown, including
+                                    project scope,
+                                    objectives, timeline, milestones, and budget.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-container pt-5">
+                    <form id="contact-form" action="{% url 'contact' %}" method="post" enctype="multipart/form-data"
+                        class="contact-form">
+                        {% csrf_token %}
+
+                        <div class="form-group mb-3">
+                            <input type="text" name="first_name" class="form-control" placeholder=" Name" required>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="tel" name="phone" class="form-control" placeholder="Phone number" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <textarea name="message" class="form-control" placeholder="Message" rows="8" cols="60"
+                                required></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button type="submit" class="submit-btn">
+                                Submit <i class="fa-regular fa-arrow-up-right"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="contact-footer-section mt-5">
+        <div class="container">
+            <!-- Email Section -->
+            <div class="email-section mb-4">
+                <h3 class="contact-email">info@softverses.com</h3>
+            </div>
+
+            <!-- Social Media Icons Section -->
+            <div class="social-icons-section d-flex justify-content-start mb-4">
+                <a href="https://www.facebook.com/softverses" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/softverses/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/97199449/admin/dashboard/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=918075608837" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.behance.net/softverses" target="_blank" class="social-icon"><i class="fab fa-behance"></i></a>
+            </div>
+
+            <!-- Description Text -->
+            <div class="footer-text-section mb-4">
+                <p>Discover a full spectrum of services at Softverses IT Solutions, where we excel in web development,
+                    digital marketing, and branding to elevate your digital presence.</p>
+            </div>
+
+            <!-- Horizontal Line -->
+            <div class="footer-line mb-4"></div>
+
+            <!-- Footer Row -->
+            <div class="d-flex justify-content-between align-items-center copy_section">
+                <p class="footer-copyright m-0">Copyright © 2024. Designed by Softverses</p>
+                <a href="{% url 'terms_and_conditions' %}" class="terms-link">Terms & Conditions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap JS -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            const navbarLinks = document.querySelector(".navbar-links");
+
+            navbarToggler.addEventListener("click", function () {
+                navbarLinks.classList.toggle("show");
+            });
+        });
+
+    </script>
+    <script>
+        // Rotate arrow when FAQ is toggled
+        const faqItems = document.querySelectorAll('.faq-question');
+        faqItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const arrowIcon = this.querySelector('.toggle-arrow');
+                arrowIcon.classList.toggle('collapsed');
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the navbar and toggler elements
+            const navbar = document.querySelector('.navbar');
+            const toggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            // Function to toggle the 'scrolled' class based on scroll position
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+
+            // Toggle background color on toggler click
+            toggler.addEventListener('click', function () {
+                if (!navbarCollapse.classList.contains('show')) {
+                    navbar.classList.add('navbar-expanded');
+                } else {
+                    navbar.classList.remove('navbar-expanded');
+                }
+            });
+
+            // Remove background color when the menu collapses
+            navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+                navbar.classList.remove('navbar-expanded');
+            });
+
+            // Add background color when the menu is shown
+            navbarCollapse.addEventListener('shown.bs.collapse', function () {
+                navbar.classList.add('navbar-expanded');
+            });
+        });
+
+
+
+    </script>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.blog-carousel').owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 20,
+                nav: false, /* Disable default navigation */
+                dots: false, /* Disable dots */
+                autoplay: true, /* Enable auto sliding */
+                autoplayTimeout: 3000, /* Time interval between slides in milliseconds (3 seconds) */
+                autoplayHoverPause: true, /* Pause sliding when the mouse hovers over the carousel */
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
+            });
+
+            // Custom arrows
+            $('.owl-prev').click(function () {
+                $('.blog-carousel').trigger('prev.owl.carousel');
+            });
+
+            $('.owl-next').click(function () {
+                $('.blog-carousel').trigger('next.owl.carousel');
+            });
+        });
+
+
+
+
+
+
+        // Get the menu button, modal, close button, and left section elements
+        const menuBar = document.getElementById('menuBar');
+        const menuModal = document.getElementById('menuModal');
+        const closeModal = document.getElementById('closeModal');
+        const leftSection = document.getElementById('leftSection');
+
+        // Open the modal when the menu icon is clicked
+        menuBar.addEventListener('click', () => {
+            menuModal.classList.add('show');
+        });
+
+        // Close the modal with fade effect
+        closeModal.addEventListener('click', () => {
+            menuModal.classList.remove('show');
+        });
+
+        // Get all menu items from the right section
+        const menuItems = document.querySelectorAll('.menu-list li');
+
+        // Function to update left section content
+        function updateLeftContent(contentId) {
+            const content = document.getElementById(contentId);
+            leftSection.innerHTML = content.innerHTML; // Replace left section with the new content
+        }
+
+        // Loop through each menu item and add a mouseover event
+        menuItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                // Get the target content ID from data-target attribute
+                const targetContentId = item.getAttribute('data-target');
+                updateLeftContent(targetContentId);
+            });
+        });
+
+
+        $(document).ready(function () {
+            $(".client-carousel").owlCarousel({
+                loop: true,                // Infinite loop
+                margin: 20,                // Add gap between items
+                nav: true,                 // Show next/prev buttons
+                autoplay: true,            // Enable auto-play
+                autoplayTimeout: 3000,     // Auto-play interval in ms
+                autoplayHoverPause: true,  // Pause on hover
+                responsive: {
+                    0: {
+                        items: 2           // 2 images for mobile screens
+                    },
+                    768: {
+                        items: 2           // 2 images for tablet screens
+                    },
+                    1024: {
+                        items: 4           // 2 images for larger screens
+                    }
+                }
+            });
+        });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Toggle the arrow icon
+                    var icon = this.querySelector('.accordion-icon i');
+                    if (this.classList.contains('collapsed')) {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    } else {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    }
+                });
+            });
+        });
+
+
+    </script>
+
+    <!-- Bootstrap JS -->
+
+
+</body>
+
+</html>

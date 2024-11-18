@@ -1,0 +1,1087 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.navbar-toggler {
+outline: none !important;
+box-shadow: none !important;
+border: none !important;
+background: transparent; /* Optional: make the background transparent if desired */
+}
+
+.navbar-toggler:hover {
+background: none !important; /* Optional: ensure hover styles don't show a background */
+box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+outline: none !important;
+box-shadow: none !important;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-family: "Poppins", sans-serif;
+
+
+}
+/* Navbar Container */
+.navbar {
+background-color: transparent; /* Start with a transparent background */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+width: 100%;
+z-index: 1000;
+transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.nav-link {
+color: #FFFFFF;
+}
+
+.navbar.scrolled {
+background-color: #000; /* Set to black when scrolled */
+}
+.navbar-expanded {
+background-color: #000; /* Black when toggler is clicked */
+}
+
+.navbar.fixed-top {
+position: fixed;
+top: 0;
+}
+
+/* Logo Styling */
+.logo {
+height: 70px;
+vertical-align: middle;
+}
+
+.brand-text {
+color: white;
+font-size: 24px;
+font-weight: bold;
+margin-left: 10px;
+vertical-align: middle;
+}
+
+.tagline {
+color: #ccc;
+font-size: 12px;
+display: block;
+}
+
+/* Navigation Links Container */
+.navbar-links {
+list-style: none;
+display: flex;
+margin: 0;
+gap: 20px; /* Adds space between nav links */
+}
+
+/* Navigation Links Styling */
+.navbar-links li {
+margin: 0; /* Reset right margin to avoid additional spacing */
+}
+
+.navbar-links a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+transition: color 0.3s;
+padding: 10px 15px; /* Add padding around links for better spacing */
+}
+
+/* Hover effect for nav links */
+.navbar-links a:hover {
+color: #9519C1;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+display: none; /* Initially hidden */
+background: none;
+border: none;
+color: white;
+font-size: 24px;
+cursor: pointer;
+}
+
+.navbar-toggler i {
+display: inline-block;
+font-size: 24px;
+color: white;
+}
+
+/* Show toggler for screens up to 1024px */
+@media (max-width: 1024px) {
+.navbar-toggler {
+display: block;
+}
+
+.navbar-links {
+flex-direction: column;
+position: absolute;
+top: 60px;
+right: 0;
+background-color: #000;
+width: 100%;
+height: 100vh;
+display: none;
+gap: 20px; /* Adds space between nav links in mobile view */
+padding-top: 20px; /* Adds padding to the top for better spacing */
+}
+
+.navbar-links li {
+margin: 20px 0; /* Adds vertical margin for better spacing */
+text-align: center;
+}
+
+.navbar-links.show {
+display: flex;
+}
+}
+
+/* Active Link and Hover Effects */
+.navbar-nav .nav-link.active {
+border-bottom: 2px solid #9519C1;
+}
+
+.navbar-nav .nav-link:hover {
+color: #9519C1;
+}
+
+/* Navbar Brand Text */
+.navbar-brand {
+font-size: 1.5rem;
+font-weight: bold;
+color: #fff;
+}
+
+.about-heading {
+color: #FFFFFF;
+font-size: 40px;
+font-weight: bold;
+z-index: 2;
+font-weight: 250;
+}
+
+.floating-image {
+position: absolute;
+z-index: 1; /* Images are placed above the background but below the text */
+}
+
+.left-image {
+top: -300%;
+left: -5%;
+width: 150px;
+height: auto;
+}
+
+.right-image {
+top: 60%;
+right: 10.2%;
+width: 300px;
+height: 300px;
+}
+/* Services Section Styling */
+.services-section {
+background-color: black;
+color: #fff;
+padding: 50px 0;
+}
+
+
+
+.services-section p {
+font-size: 1.1rem;
+line-height: 1.5;
+font-weight: 275;
+text-align: justify;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+.about-heading {
+font-size: 2rem;
+}
+.about-section{
+height: 80vh;
+}
+
+.left-image img{
+width: 100px;
+height: 100px;
+margin-top: 70px;
+}
+.right-image img {
+width: 190px;
+height: 190px;
+margin-top: 90px;
+}
+
+
+
+.services-section p {
+font-size: 1rem;
+}
+}
+
+@media (max-width: 576px) {
+.about-heading {
+font-size: 1.5rem;
+}
+
+
+
+.services-section p {
+font-size: 0.9rem;
+}
+}
+
+@media (max-width: 375px) {
+.about-heading {
+font-size: 1.2rem;
+}
+
+.services-section h2 {
+font-size: 1.4rem;
+}
+
+.services-section p {
+font-size: 0.85rem;
+}
+}
+
+
+
+/* General Slider Section */
+.slider-section {
+background-color: #000; /* Full black background */
+color: #fff; /* White text color */
+overflow-x: hidden;
+margin-top: 50px;
+padding: 0 15px; /* Add padding for better spacing */
+}
+
+/* Blockquote Styling */
+.blockquote {
+font-size: 1.5rem;
+font-weight: bold;
+line-height: 1.3;
+margin: 0 auto; /* Center the blockquote */
+position: relative;
+padding-left: 100px; /* Adjust padding for left quotation mark */
+margin-top: 10px;
+max-width: 800px; /* Max width for better readability */
+}
+
+.blockquote::before {
+content: "“";
+position: absolute;
+left: 0;
+top: -50px;
+left: -12px;
+font-size: 8rem; /* Adjust size for smaller screens */
+color: #efe4f3; /* Purple color for the opening quotation mark */
+margin-left: 10px; /* Align the quotation mark properly */
+}
+
+.quote-text {
+color: #FFFFFF;
+font-weight: 400;
+font-size: 25px;
+text-align: center; /* Center-align the quote text */
+}
+
+.quote-content {
+margin-top: 20px;
+font-size: 20px;
+font-weight: 275;
+color: #FFFFFF;
+line-height: 1.6;
+max-width: 600px; /* Limit the width for better readability */
+margin: 0 auto; /* Center-align the content */
+}
+
+/* Arrow Buttons */
+.arrow-buttons {
+display: flex;
+gap: 10px; /* Space between the arrow buttons */
+justify-content: center; /* Center the buttons horizontally */
+}
+
+.arrow-buttons button {
+font-size: 1.5rem; /* Adjust the font size of the arrow */
+color: #fff;
+background-color: transparent;
+border: 1px solid; /* Circular border */
+border-radius: 50%; /* Makes the buttons circular */
+width: 40px; /* Set the width properly */
+height: 40px; /* Set the height properly */
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
+transition: all 0.3s ease; /* Smooth transition for hover effect */
+text-decoration: none;
+}
+
+/* Left Button (Purple Border) */
+.arrow-buttons .prev-btn {
+border-color: #fff; /* Purple border */
+}
+
+.arrow-buttons .prev-btn:hover {
+border-color: #9519C1; /* Keeps the purple border on hover */
+color: #9519C1; /* Changes arrow color to purple on hover */
+}
+
+/* Right Button (White Border) */
+.arrow-buttons .next-btn {
+border-color: #fff; /* White border */
+}
+
+.arrow-buttons .next-btn:hover {
+border-color: #9519C1; /* Changes to purple border on hover */
+color: #9519C1; /* Changes arrow color to purple on hover */
+}
+
+/* Horizontal Line Styling */
+hr {
+border-color: #FFFFFF; /* White line */
+border-width: 2px;
+height: 2px;
+flex-grow: 1; /* Makes the line flexible to fill the available space */
+margin: 0 10px; /* Space between the line and the arrow buttons */
+}
+
+/* Flexbox Layout for Horizontal Line and Arrows */
+.d-flex-align {
+display: flex;
+justify-content: center; /* Center-align the elements */
+align-items: center;
+padding-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.blockquote {
+font-size: 1.4rem;
+padding-left: 80px; /* Adjust padding for left quotation mark */
+}
+
+.quote-content {
+font-size: 0.9rem; /* Adjust text size for smaller screens */
+max-width: 500px; /* Adjust max width */
+}
+.quote-text{
+font-size: 16px;
+}
+
+.arrow-buttons button {
+width: 35px;
+height: 35px;
+font-size: 1.2rem;
+}
+}
+
+@media (max-width: 576px) {
+.blockquote {
+font-size: 1.2rem;
+margin-top: 20px;
+padding-left: 60px; /* Further adjust padding for smaller screens */
+}
+
+.quote-content {
+font-size: 0.8rem;
+max-width: 100%; /* Use full width */
+}
+
+.arrow-buttons button {
+width: 30px;
+height: 30px;
+font-size: 1rem;
+}
+}
+
+
+
+body {
+    background-color: #000;
+    color: #fff;
+
+}
+.leadership-section {
+text-align: center;
+margin-top: 80px;
+}
+
+.leadership-section h2 {
+font-size: 1.8rem;
+margin-bottom: 20px;
+color: #fff;
+}
+
+.leadership-section h2 span {
+background: linear-gradient(93.89deg, #9519C1 7.47%, #FFFFFF 78.42%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.leader-card {
+text-align: center;
+margin-bottom: 30px;
+margin-top: 20px;
+}
+
+.leader-image-container {
+position: relative;
+width: 100%;
+height: 550px;
+max-width: 450px;
+margin: 0 auto 20px;
+overflow: hidden;
+border-radius: 120px 120px 0 0; /* Rounded top and square bottom */
+}
+
+.leader-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.leader-name {
+font-size: 1.2rem;
+font-weight: bold;
+color: #fff;
+}
+
+.leader-role {
+font-size: 0.9rem;
+color: #aaa;
+}
+
+@media (max-width: 768px) {
+.leader-image-container {
+    max-width: 280px;
+    height: 350px;
+}
+
+.leader-name {
+    font-size: 1rem;
+}
+
+.leader-role {
+    font-size: 0.8rem;
+}
+
+.leadership-section {
+    margin-top: 100px;
+}
+}
+
+@media (max-width: 576px) {
+.leader-image-container {
+    max-width: 250px;
+    height: 300px;
+}
+
+.leader-name {
+    font-size: 0.9rem;
+}
+
+.leader-role {
+    font-size: 0.7rem;
+}
+
+.leadership-section {
+    margin-top: 50px;
+}
+}
+.menu-bar {
+cursor: pointer;
+}
+
+/* Circle Container for Menu Icon */
+.menu-icon-circle {
+width: 45px;
+height: 45px;
+border: 2px solid #fff; /* White border for the circle */
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+transition: all 0.3s ease;
+}
+
+/* Lines inside the circle */
+.menu-line {
+height: 2px;
+background-color: #fff; /* White color for the lines */
+margin: 3px 0; /* Spacing between lines */
+transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Adjust line widths */
+.menu-line-short {
+width: 12px;
+margin-right: 12px;
+}
+
+.menu-line-medium {
+width: 12px;
+margin-left: 12px;
+}
+
+.menu-line-long {
+width: 28px;
+}
+
+/* Hover effect for the circle */
+.menu-icon-circle:hover {
+background-color: #9519C1; /* Purple background on hover */
+border-color: #9519C1; /* Change border color to purple */
+}
+
+/* Change line color on hover */
+.menu-icon-circle:hover .menu-line {
+background-color: #fff; /* Change line color to white */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.menu-bar {
+display: none; /* Hide menu bar on smaller screens */
+}
+}
+@media (max-width: 768px) {
+.menu-bar {
+display: none; /* Hide the menu bar on screens smaller than 768px */
+}
+.menu-modal {
+display: none;
+}
+}    
+/* Modal */
+.menu-modal {
+opacity: 0;
+visibility: hidden;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: black; /* Full black background */
+background: 
+radial-gradient(circle at bottom left, rgba(128, 0, 128, 1), rgba(0, 0, 0, 0) 70%),
+black; /* Gradient on top of the black background */
+z-index: 9999;
+color: white;
+display: flex;
+justify-content: space-between;
+padding: 20px;
+pointer-events: none;
+transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+.left-section {
+width: 60%;
+padding: 60px 50px;
+font-size: 18px;
+display: flex;
+flex-direction: column; /* Stack content vertically in the left section */
+}
+
+.left-section h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+font-weight: 250;
+}
+.left-section p {
+font-size: 18px;
+text-align: justify;
+font-weight: 250;
+}
+
+.right-section {
+width: 35%;
+padding: 60px 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.menu-list {
+list-style: none;
+font-size: 2rem;
+line-height: 2.5;
+}
+
+.menu-list li {
+margin-bottom: 20px;
+cursor: pointer;
+}
+
+.menu-list li:hover {
+color: #9519C1;
+}
+
+/* Close Modal Button */
+.close-modal {
+position: absolute;
+top: 20px;
+right: 30px;
+font-size: 3.5rem;
+cursor: pointer;
+font-weight: 250;
+}
+.menu-modal.show {
+opacity: 1;
+visibility: visible;
+pointer-events: auto; /* Enable interaction when modal is visible */
+}
+/* Media Query for Smaller Screens - Hides the right menu section */
+@media (max-width: 768px) {
+.right-section {
+display: none;
+}
+
+.left-section {
+width: 100%;
+padding: 20px;
+}
+
+.menu-modal {
+justify-content: center;
+}
+}
+
+/* Testimonial card styling */
+.testimonial-card {
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.testimonial-card img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin-right: 15px;
+}
+
+/* Hidden content container */
+.hidden-content {
+display: none;
+}
+
+/* Show Modal */
+/* .show {
+display: flex;
+} */
+
+/* Media Query for Smaller Screens - Hides the right menu section */
+@media (max-width: 768px) {
+.right-section {
+display: none;
+}
+
+.left-section {
+width: 100%;
+padding: 20px;
+}
+
+.menu-modal {
+justify-content: center;
+}
+}
+.contact-footer-section {
+background-color: #000; /* Black background */
+color: #fff; /* White text */
+padding: 40px 0; /* Top and bottom padding */
+}
+
+/* Email Section */
+.contact-email {
+font-size: 2rem;
+font-weight: 400;
+margin: 0;
+}
+
+/* Social Media Icons Section */
+.social-icons-section {
+gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+width: 50px;
+height: 50px;
+border: 2px solid #fff;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+font-size: 1.5rem;
+transition: all 0.3s ease;
+text-decoration: none;
+}
+
+.social-icon:hover {
+color: #000;
+background-color: #fff; /* White background on hover */
+}
+
+/* Description Text Section */
+.footer-text-section p {
+font-size: 20px;
+color: #FFFFFF; /* Light gray text */
+margin: 0;
+max-width: 600px; /* Max width for better readability */
+text-align: justify;
+font-weight: 250;
+}
+
+/* Horizontal Line */
+.footer-line {
+height: 1px;
+background-color: #fff; /* Dark gray line */
+width: 100%;
+}
+
+/* Copyright Section */
+.footer-copyright p {
+font-size: 0.9rem;
+color: #FFFFFF; /* Light gray text */
+margin: 0;
+font-weight: 250;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.contact-email {
+font-size: 1.5rem; /* Adjust font size for smaller screens */
+}
+
+.social-icon {
+width: 40px;
+height: 40px;
+font-size: 1.2rem; /* Adjust icon size */
+}
+
+.footer-text-section p {
+font-size: 0.9rem; /* Adjust text size */
+}
+}
+
+@media (max-width: 480px) {
+.contact-email {
+font-size: 1.2rem;
+}
+
+.social-icon {
+width: 35px;
+height: 35px;
+font-size: 1rem;
+}
+
+.footer-text-section p {
+font-size: 0.8rem;
+}
+
+.footer-copyright p {
+font-size: 0.8rem;
+}
+}
+/* Footer Link */
+.terms-link {
+color: #fff; /* White text for the link */
+font-size: 0.9rem;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+color: #9519C1; /* Bright orange on hover */
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+.footer-copyright,
+.terms-link {
+font-size: 0.8rem;
+}
+
+.copy_section {
+flex-direction: column; /* Stack items vertically on smaller screens */
+align-items: center;
+}
+
+.terms-link {
+margin-top: 10px; /* Add spacing between stacked items */
+}
+}
+.sub-title {
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(93.89deg, #9519C1 40%, #FFFFFF 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 250;
+    font-weight: 250;
+}
+.gradient-wrapper {
+position: relative;
+overflow: hidden; /* Ensures gradients don’t affect the layout */
+}
+
+/* Gradient on the left side */
+.gradient-wrapper::before {
+content: '';
+position: absolute;
+top: 10%;
+bottom: 0;
+left: -210px;
+width: 350px;
+height: 350px;
+background: radial-gradient(circle, rgba(149, 25, 193, 0.9) 0%, transparent 75%);
+z-index: 0; /* Set behind the content */
+pointer-events: none; /* Makes sure it doesn't interfere with interactions */
+}
+
+/* Gradient on the right side */
+.gradient-wrapper::after {
+content: '';
+position: absolute;
+top: 50%;
+bottom: 0;
+right: -210px;
+width: 350px;
+height: 350px;
+background: radial-gradient(circle, rgba(149, 25, 193, 0.9) 0%, transparent 75%);
+z-index: 0; /* Set behind the content */
+pointer-events: none;
+}
+@media (max-width: 992px) {
+.gradient-wrapper::before,
+.gradient-wrapper::after {
+width: 200px;
+height: 200px;
+}
+
+.gradient-wrapper::before {
+left: -70px;
+top: 15%;
+}
+
+.gradient-wrapper::after {
+right: -70px;
+top: 60%;
+}
+}
+
+@media (max-width: 768px) {
+.gradient-wrapper::before,
+.gradient-wrapper::after {
+width: 150px;
+height: 150px;
+}
+
+.gradient-wrapper::before {
+left: -50px;
+top: 20%;
+}
+
+.gradient-wrapper::after {
+right: -50px;
+top: 70%;
+}
+}
+
+@media (max-width: 576px) {
+.gradient-wrapper::before,
+.gradient-wrapper::after {
+width: 100px;
+height: 100px;
+}
+
+.gradient-wrapper::before {
+left: -60px;
+top: 25%;
+}
+
+.gradient-wrapper::after {
+right: -50px;
+top: 80%;
+}
+}
+.flow-section{
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+.image-container {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 250;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Position the text near each emoji on the image */
+.step1 {
+    top: 13%; /* Adjust as per the emoji's position in the image */
+    left: -1%;
+}
+
+.step2 {
+    top: 27%;
+    left: 45%;
+}
+
+.step3 {
+    top: 60%;
+    left: 72%;
+}
+
+.step4 {
+    top: 80%;
+    left: 13%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-overlay {
+        font-size: 14px;
+        padding: 3px 7px;
+    }
+
+    .step1, .step2, .step3, .step4 {
+        left: 50%; /* Center-align the text on smaller screens */
+        transform: translateX(-50%);
+    }
+
+    .step1 {
+        top: 13%;
+        left: 14%;
+    }
+
+    .step2 {
+        top: 30%;
+    }
+
+    .step3 {
+        top: 58%;
+        left: 75%;
+    }
+
+    .step4 {
+        top: 72%;
+        left: 17%;
+    }
+}
+
+.custom-contact-button {
+background-color: transparent; /* Transparent background */
+border: 1px solid #FFFFFF; /* White border */
+border-radius: 0px; /* No border radius */
+color: #FFFFFF; /* White text */
+padding: 10px 20px; /* Add some padding for better appearance */
+font-size: 16px; /* Adjust font size */
+cursor: pointer; /* Show pointer on hover */
+transition: all 0.3s ease; /* Add a smooth hover effect */
+width: 30%;
+}
+
+.custom-contact-button:hover {
+background-color: white; /* Change background to white on hover */
+color: black; /* Change text color to black on hover */
+}
+.contact-info {
+    font-size: 42px; /* Adjust font size as needed */
+    line-height: 1.8; /* Increase spacing between lines */
+    color: #FFFFFF; /* White text color */
+    font-weight: 400;
+}
+.contact-info-container {
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+.blog-card {
+   
+   border-radius: 15px;
+   padding: 10px;
+   transition: transform 0.3s ease;
+}
+
+.blog-card img {
+   width: 100%;
+   border-radius: 10px;
+   margin-bottom: 10px;
+}
+
+.blog-card h5 {
+   font-size: 1.2rem;
+   margin-bottom: 5px;
+   color: #fff;
+}
+
+.blog-card .blog-author {
+   font-size: 0.9rem;
+   color: #bbb;
+   
+}
+
+/* Hover effect */
+.blog-card:hover {
+   transform: scale(1.05);
+}
+html {
+scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Light grey track */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Thumb (scroll handle) */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Dark grey thumb */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker grey when hovered */
+}
+
+/* Optional: Add scrollbar for Firefox */
+body {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #888 #f5f5f5; /* Thumb color | Track color */
+}

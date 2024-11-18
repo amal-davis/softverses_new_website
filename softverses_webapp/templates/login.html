@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>softverses Admin Login</title>
+    <link rel="icon" href="/static/images/fav_icon.png" type="image/png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+padding: 0;
+font-family: "Poppins", sans-serif;
+}
+/* Navbar Container */
+.navbar {
+    background-color: transparent; /* Start with a transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-link {
+    color: #FFFFFF;
+}
+
+.navbar.scrolled {
+    background-color: #000; /* Set to black when scrolled */
+}
+.navbar-expanded {
+    background-color: #000; /* Black when toggler is clicked */
+}
+
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+}
+
+/* Logo Styling */
+.logo {
+    height: 70px;
+    vertical-align: middle;
+}
+
+.brand-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.tagline {
+    color: #ccc;
+    font-size: 12px;
+    display: block;
+}
+
+/* Navigation Links Container */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 20px; /* Adds space between nav links */
+}
+
+/* Navigation Links Styling */
+.navbar-links li {
+    margin: 0; /* Reset right margin to avoid additional spacing */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px 15px; /* Add padding around links for better spacing */
+}
+
+/* Hover effect for nav links */
+.navbar-links a:hover {
+    color: #9519C1;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    display: none; /* Initially hidden */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.navbar-toggler i {
+    display: inline-block;
+    font-size: 24px;
+    color: white;
+}
+
+/* Show toggler for screens up to 1024px */
+@media (max-width: 1024px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        gap: 20px; /* Adds space between nav links in mobile view */
+        padding-top: 20px; /* Adds padding to the top for better spacing */
+    }
+
+    .navbar-links li {
+        margin: 20px 0; /* Adds vertical margin for better spacing */
+        text-align: center;
+    }
+
+    .navbar-links.show {
+        display: flex;
+    }
+}
+
+/* Active Link and Hover Effects */
+.navbar-nav .nav-link.active {
+    border-bottom: 2px solid #9519C1;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #9519C1;
+}
+
+/* Navbar Brand Text */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.menu-bar {
+    cursor: pointer;
+}
+
+/* Circle Container for Menu Icon */
+.menu-icon-circle {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #fff; /* White border for the circle */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Lines inside the circle */
+.menu-line {
+    height: 2px;
+    background-color: #fff; /* White color for the lines */
+    margin: 3px 0; /* Spacing between lines */
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Adjust line widths */
+.menu-line-short {
+    width: 12px;
+    margin-right: 12px;
+}
+
+.menu-line-medium {
+    width: 12px;
+    margin-left: 12px;
+}
+
+.menu-line-long {
+    width: 28px;
+}
+
+/* Hover effect for the circle */
+.menu-icon-circle:hover {
+    background-color: #9519C1; /* Purple background on hover */
+    border-color: #9519C1; /* Change border color to purple */
+}
+
+/* Change line color on hover */
+.menu-icon-circle:hover .menu-line {
+    background-color: #fff; /* Change line color to white */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-bar {
+        display: none; /* Hide menu bar on smaller screens */
+    }
+}
+@media (max-width: 768px) {
+    .menu-bar {
+        display: none; /* Hide the menu bar on screens smaller than 768px */
+    }
+    .menu-modal {
+        display: none;
+    }
+}    
+/* Modal */
+.menu-modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Full black background */
+    background: 
+        radial-gradient(circle at bottom left, rgba(128, 0, 128, 1), rgba(0, 0, 0, 0) 70%),
+        black; /* Gradient on top of the black background */
+    z-index: 9999;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+.left-section {
+    width: 60%;
+    padding: 60px 50px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically in the left section */
+}
+
+.left-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.right-section {
+    width: 35%;
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list {
+    list-style: none;
+    font-size: 2rem;
+    line-height: 2.5;
+}
+
+.menu-list li {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.menu-list li:hover {
+    color: #9519C1;
+}
+
+/* Close Modal Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.menu-modal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Enable interaction when modal is visible */
+}
+/* Media Query for Smaller Screens - Hides the right menu section */
+@media (max-width: 768px) {
+    .right-section {
+        display: none;
+    }
+
+    .left-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-modal {
+        justify-content: center;
+    }
+}
+
+/* Testimonial card styling */
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.testimonial-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Hidden content container */
+.hidden-content {
+    display: none;
+}
+
+/* Show Modal */
+
+/* Media Query for Smaller Screens - Hides the right menu section */
+@media (max-width: 768px) {
+    .right-section {
+        display: none;
+    }
+
+    .left-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-modal {
+        justify-content: center;
+    }
+}
+.sub-title {
+            font-size: 30px;
+            font-weight: bold;
+            background: linear-gradient(93.89deg, #9519C1 40%, #FFFFFF 60%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            font-weight: 400;
+        } 
+        
+        .contact-footer-section {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 40px 0; /* Top and bottom padding */
+}
+
+/* Email Section */
+.contact-email {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Social Media Icons Section */
+.social-icons-section {
+    gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #000;
+    background-color: #fff; /* White background on hover */
+}
+
+/* Description Text Section */
+.footer-text-section p {
+    font-size: 20px;
+    color: #FFFFFF; /* Light gray text */
+    margin: 0;
+    max-width: 600px; /* Max width for better readability */
+    text-align: justify;
+    font-weight: 250;
+}
+
+/* Horizontal Line */
+.footer-line {
+    height: 1px;
+    background-color: #fff; /* Dark gray line */
+    width: 100%;
+}
+
+/* Copyright Section */
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: #FFFFFF; /* Light gray text */
+    margin: 0;
+    font-weight: 250;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-email {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem; /* Adjust icon size */
+    }
+
+    .footer-text-section p {
+        font-size: 0.9rem; /* Adjust text size */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-email {
+        font-size: 1.2rem;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .footer-text-section p {
+        font-size: 0.8rem;
+    }
+
+    .footer-copyright p {
+        font-size: 0.8rem;
+    }
+}
+.gradient-wrapper {
+    position: relative;
+    overflow: hidden; /* Ensures gradients don’t affect the layout */
+}
+
+/* Left-side Gradient */
+.gradient-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 40%;
+    left: -110px; /* Adjust positioning */
+    width: 300px; /* Width of the gradient */
+    background: radial-gradient(circle, rgba(149, 25, 193, 0.9) 0%, transparent 75%);
+    z-index: 0; /* Set behind the content */
+    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+}
+
+/* Right-side Gradient */
+.gradient-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -80px; /* Adjust positioning */
+    width: 300px; /* Width of the gradient */
+    background: radial-gradient(circle, rgba(149, 25, 193, 0.9) 0%, transparent 75%);
+    z-index: 0; /* Set behind the content */
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    .gradient-wrapper::before,
+    .gradient-wrapper::after {
+        width: 200px; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .gradient-wrapper::before,
+    .gradient-wrapper::after {
+        width: 90px; /* Further adjust width for mobile screens */
+    }
+}
+.login-form {
+           
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px; /* Maximum width for larger screens */
+            margin: 20px;
+            justify-content: center;
+           
+        }
+        .login-form h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .form-control {
+            font-size: 1rem; /* Standard input font size */
+            padding: 0.6rem 0.75rem; /* Comfortable padding for inputs */
+        }
+        .btn {
+            font-size: 1rem;
+            padding: 0.5rem;
+            background: linear-gradient(90deg, #E74CBF 0%, #3E026F 100%);
+            width: 100%;
+            border: none;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #3E026F 0%, #E74CBF 100%);
+        }
+        @media (max-width: 576px) {
+            .login-form {
+                max-width: 90%;
+                padding: 20px;
+            }
+            .login-form h3 {
+                font-size: 1.2rem;
+            }
+            .btn {
+                font-size: 0.9rem;
+            }
+        }
+</style>
+</head>
+<body>
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'images/logo (2).png' %}" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link" style="border-bottom: 0.5px solid #9519C1;">Contact Us</a></li>
+                
+                </ul>
+             <!-- Navigation Bar -->
+   
+             <div class="menu-bar" id="menuBar" style="margin-left: 80px;">
+                <div class="menu-icon-circle">
+                    <span class="menu-line menu-line-short"></span>
+                    <span class="menu-line menu-line-long"></span>
+                    <span class="menu-line menu-line-medium"></span>
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Full Screen Menu Modal -->
+        <div class="menu-modal" id="menuModal">
+            <div class="left-section" id="leftSection">
+                <!-- Default content for the left section -->
+                <h1>Our Impact</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+            </div>
+            <div class="right-section">
+                <ul class="menu-list">
+                    <li data-target="impactContent">Impact</li>
+                    <li data-target="testimonialsContent">Testimonials</li>
+                    <li data-target="clientsContent">Clients</li>
+                    <li data-target="partnershipContent">Partnership</li>
+                    <li data-target="insightsContent">Insights</li>
+                    <li data-target="contactContent">Contact</li>
+                </ul>
+            </div>
+            <span class="close-modal" id="closeModal">&times;</span>
+        </div>
+    
+        <!-- Testimonial Content (Hidden by Default) -->
+        <div class="hidden-content" id="testimonialsContent">
+            <div class="testimonial-card">
+                <img src="path/to/image1.jpg" alt="Person 1">
+                <p>Person 1: CEO, Company 1</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="path/to/image2.jpg" alt="Person 2">
+                <p>Person 2: Director, Company 2</p>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    
+        <!-- Impact Content (Hidden by Default) -->
+        <div class="hidden-content" id="impactContent">
+            <h1>Our Impact</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+          
+        </div>
+        <div class="hidden-content" id="clientsContent">
+            <h1>Our Clients</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+          
+        </div>
+        <div class="hidden-content" id="partnershipContent">
+            <h1>Our Parntnership</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+          
+        </div>
+        <div class="hidden-content" id="insightsContent">
+            <h1>Our Insight</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+          
+        </div>
+        <div class="hidden-content" id="contactContent">
+            <h1>Our Contact</h1>
+                <p>Every innovation that happens here is out of a quest to get better at what we are already doing. We deliver ideas that make a difference, create experiences that transform lives and build ecosystems that foster progress.</p>
+          
+        </div>
+    
+        <!-- Add similar content for Clients, Partnership, Insights, and Contact -->
+    
+</header>
+
+<div class="login-form" style="margin-top: 150px;">
+    <h3>Admin Login</h3>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="post" action="{% url 'admin_login' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn text-white">Login</button>
+    </form>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarLinks = document.querySelector(".navbar-links");
+
+    navbarToggler.addEventListener("click", function() {
+        navbarLinks.classList.toggle("show");
+    });
+});
+
+
+
+const menuBar = document.getElementById('menuBar');
+const menuModal = document.getElementById('menuModal');
+const closeModal = document.getElementById('closeModal');
+const leftSection = document.getElementById('leftSection');
+
+// Open the modal when the menu icon is clicked
+menuBar.addEventListener('click', () => {
+    menuModal.classList.add('show');
+});
+
+// Close the modal with fade effect
+closeModal.addEventListener('click', () => {
+    menuModal.classList.remove('show');
+});
+
+// Get all menu items from the right section
+const menuItems = document.querySelectorAll('.menu-list li');
+
+// Function to update left section content
+function updateLeftContent(contentId) {
+    const content = document.getElementById(contentId);
+    leftSection.innerHTML = content.innerHTML; // Replace left section with the new content
+}
+
+// Loop through each menu item and add a mouseover event
+menuItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        // Get the target content ID from data-target attribute
+        const targetContentId = item.getAttribute('data-target');
+        updateLeftContent(targetContentId);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+        // Get the navbar and toggler elements
+        const navbar = document.querySelector('.navbar');
+        const toggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        // Function to toggle the 'scrolled' class based on scroll position
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Toggle background color on toggler click
+        toggler.addEventListener('click', function() {
+            if (!navbarCollapse.classList.contains('show')) {
+                navbar.classList.add('navbar-expanded');
+            } else {
+                navbar.classList.remove('navbar-expanded');
+            }
+        });
+
+        // Remove background color when the menu collapses
+        navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+            navbar.classList.remove('navbar-expanded');
+        });
+
+        // Add background color when the menu is shown
+        navbarCollapse.addEventListener('shown.bs.collapse', function() {
+            navbar.classList.add('navbar-expanded');
+        });
+    });
+
+</script>
+
+</body>
+</html>

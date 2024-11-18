@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global styles */
+body {
+margin: 0;
+padding: 0;
+background-color: #000;
+font-family: "Poppins", sans-serif;
+}
+
+
+
+.about-section {
+ background: url("{% static 'images/about.png' %}") no-repeat center center;
+ background-size: cover;
+ height: 100vh;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.about-heading {
+ color: #FFFFFF;
+ font-size: 40px;
+ font-weight: bold;
+ z-index: 2;
+ font-weight: 250;
+}
+
+.floating-image {
+ position: absolute;
+ z-index: 1; /* Images are placed above the background but below the text */
+}
+
+.left-image {
+ top: -300%;
+ left: -5%;
+ width: 150px;
+ height: auto;
+}
+
+.right-image {
+top: 60%;
+right: 10.2%;
+width: 300px;
+height: 300px;
+}
+/* Services Section Styling */
+.services-section {
+ background-color: black;
+ color: #fff;
+ padding: 50px 0;
+}
+
+.services-section h2 {
+ font-size: 32px;
+ margin-bottom: 1rem;
+ background: linear-gradient(93.89deg, #9519C1 40%, #FFFFFF 60%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ font-weight: 400;
+}
+
+.services-section p {
+ font-size: 1.1rem;
+ line-height: 1.5;
+ font-weight: 275;
+ text-align: justify;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+.about-heading {
+ font-size: 2rem;
+}
+.about-section{
+ height: 80vh;
+}
+
+.left-image img{
+ width: 100px;
+ height: 100px;
+}
+.right-image img {
+ width: 190px;
+ height: 190px;
+ margin-top: 90px;
+}
+
+.services-section h2 {
+ font-size: 1.8rem;
+}
+
+.services-section p {
+ font-size: 1rem;
+}
+}
+
+@media (max-width: 576px) {
+.about-heading {
+ font-size: 1.5rem;
+}
+
+.services-section h2 {
+ font-size: 1.6rem;
+}
+
+.services-section p {
+ font-size: 0.9rem;
+}
+}
+
+@media (max-width: 375px) {
+.about-heading {
+ font-size: 1.2rem;
+}
+
+.services-section h2 {
+ font-size: 1.4rem;
+}
+
+.services-section p {
+ font-size: 0.85rem;
+}
+}
+.centered-section {
+position: relative;
+padding: 60px 0;
+text-align: center;
+background-color: black;
+overflow: hidden; /* Ensures the pseudo-elements don’t affect content layout */
+}
+
+.centered-section h1 {
+font-size: 2rem;
+font-weight: bold;
+line-height: 1.4;
+background: linear-gradient(93.89deg, #9519C1 40%, #FFFFFF 60%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav-link{
+color: #FFFFFF;
+}   
+/* Menu Bar Container */
+.menu-bar {
+cursor: pointer;
+}
+
+/* Circle Container for Menu Icon */
+.menu-icon-circle {
+width: 45px;
+height: 45px;
+border: 2px solid #fff; /* White border for the circle */
+border-radius: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+transition: all 0.3s ease;
+}
+
+/* Lines inside the circle */
+.menu-line {
+height: 2px;
+background-color: #fff; /* White color for the lines */
+margin: 3px 0; /* Spacing between lines */
+transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Adjust line widths */
+.menu-line-short {
+width: 12px;
+margin-right: 12px;
+}
+
+.menu-line-medium {
+width: 12px;
+margin-left: 12px;
+}
+
+.menu-line-long {
+width: 28px;
+}
+
+/* Hover effect for the circle */
+.menu-icon-circle:hover {
+background-color: #9519C1; /* Purple background on hover */
+border-color: #9519C1; /* Change border color to purple */
+}
+
+/* Change line color on hover */
+.menu-icon-circle:hover .menu-line {
+background-color: #fff; /* Change line color to white */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.menu-bar {
+ display: none; /* Hide menu bar on smaller screens */
+}
+}
+
+
+
+@media (max-width: 768px) {
+.menu-bar {
+ display: none; /* Hide the menu bar on screens smaller than 768px */
+}
+.menu-modal {
+ display: none;
+}
+}    
+/* Modal */
+.menu-modal {
+opacity: 0;
+visibility: hidden;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: black; /* Full black background */
+background: 
+ radial-gradient(circle at bottom left, rgba(128, 0, 128, 1), rgba(0, 0, 0, 0) 70%),
+ black; /* Gradient on top of the black background */
+z-index: 9999;
+color: white;
+display: flex;
+justify-content: space-between;
+padding: 20px;
+pointer-events: none;
+transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+
+.left-section {
+width: 60%;
+padding: 60px 50px;
+font-size: 18px;
+display: flex;
+flex-direction: column; /* Stack content vertically in the left section */
+}
+
+.left-section h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+font-weight: 250;
+}
+
+.left-section p {
+font-size: 18px;
+text-align: justify;
+font-weight: 250;
+}
+
+.right-section {
+width: 35%;
+padding: 60px 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.menu-list {
+list-style: none;
+font-size: 2rem;
+line-height: 2.5;
+}
+
+.menu-list li {
+margin-bottom: 20px;
+cursor: pointer;
+}
+
+.menu-list li:hover {
+color: #9519C1;
+}
+
+/* Close Modal Button */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3.5rem;
+    cursor: pointer;
+    font-weight: 250;
+    }
+
+/* Testimonial card styling */
+.testimonial-card {
+display: flex;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.testimonial-card img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin-right: 15px;
+}
+
+/* Hidden content container */
+.hidden-content {
+display: none;
+}
+
+.menu-modal.show {
+opacity: 1;
+visibility: visible;
+pointer-events: auto; /* Enable interaction when modal is visible */
+}
+/* Media Query for Smaller Screens - Hides the right menu section */
+@media (max-width: 768px) {
+.right-section {
+ display: none;
+}
+
+.left-section {
+ width: 100%;
+ padding: 20px;
+}
+
+.menu-modal {
+ justify-content: center;
+}
+}
+.accordion-header .accordion-button {
+background-color: #000; /* Black background */
+color: #fff; /* White text */
+font-size: 1.2rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+border: none !important; /* No borders */
+outline: none !important;
+position: relative; /* For positioning the icon */
+transition: background-color 0.3s, color 0.3s;
+font-weight: 250;
+}
+.card-title {
+font-weight: 400;
+color: #fff;
+}
+.card-text {
+color: #fff;
+
+}
+.navbar-toggler {
+outline: none !important;
+box-shadow: none !important;
+border: none !important;
+background: transparent; /* Optional: make the background transparent if desired */
+}
+
+.navbar-toggler:hover {
+background: none !important; /* Optional: ensure hover styles don't show a background */
+box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+outline: none !important;
+box-shadow: none !important;
+}
+.custom-contact-button {
+background-color: transparent; /* Transparent background */
+border: 1px solid #FFFFFF; /* White border */
+border-radius: 0px; /* No border radius */
+color: #FFFFFF; /* White text */
+padding: 10px 20px; /* Add some padding for better appearance */
+font-size: 16px; /* Adjust font size */
+cursor: pointer; /* Show pointer on hover */
+transition: all 0.3s ease; /* Add a smooth hover effect */
+width: 30%;
+}
+
+.custom-contact-button:hover {
+background-color: white; /* Change background to white on hover */
+color: black; /* Change text color to black on hover */
+}
+.contact-info {
+     font-size: 42px; /* Adjust font size as needed */
+     line-height: 1.8; /* Increase spacing between lines */
+     color: #FFFFFF; /* White text color */
+     font-weight: 400;
+ }
+.contact-info-container {
+     padding: 20px; /* Add padding for spacing */
+     border-radius: 5px; /* Optional: Rounded corners */
+ }
+ .blog-card {
+    
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-card h5 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.blog-card .blog-author {
+    font-size: 0.9rem;
+    color: #bbb;
+    
+}
+
+/* Hover effect */
+.blog-card:hover {
+    transform: scale(1.05);
+}
+::-webkit-scrollbar {
+     width: 8px; /* Adjust the width of the scrollbar */
+ }
+
+ /* Track (background of the scrollbar) */
+ ::-webkit-scrollbar-track {
+     background: #f5f5f5; /* Light grey track */
+     border-radius: 10px; /* Rounded corners */
+ }
+
+ /* Thumb (scroll handle) */
+ ::-webkit-scrollbar-thumb {
+     background: #888; /* Dark grey thumb */
+     border-radius: 10px; /* Rounded corners */
+ }
+
+ /* Thumb on hover */
+ ::-webkit-scrollbar-thumb:hover {
+     background: #555; /* Darker grey when hovered */
+ }
+
+ /* Optional: Add scrollbar for Firefox */
+ body {
+     scrollbar-width: thin; /* Thin scrollbar */
+     scrollbar-color: #888 #f5f5f5; /* Thumb color | Track color */
+ }

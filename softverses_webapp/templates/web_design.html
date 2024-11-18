@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Design Service</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/contact.css' %}"> -->
+    <link rel="icon" href="/static/images/fav_icon.png" type="image/png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Post+No+Bills+Colombo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/web_design.css' %}" type="text/css">
+  
+</head>
+    <style>
+.about-section {
+ background: url("{% static 'images/about.png' %}") no-repeat center center;
+ background-size: cover;
+ height: 100vh;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+    </style>
+
+<body>
+<!-- Transparent Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'images/logo (2).png' %}" alt="Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" >Home</a></li>
+                    <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="{% url 'services' %}" class="nav-link" class=" nav-link">Services</a></li>
+                    <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="{% url 'blog_page' %}"  class="nav-link">Blogs</a></li>
+                    <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link">Contact Us</a></li>
+                
+                </ul>
+                <!-- Navigation Bar -->
+   
+                <div class="menu-bar" id="menuBar" style="margin-left: 80px;">
+                    <div class="menu-icon-circle">
+                        <span class="menu-line menu-line-short"></span>
+                        <span class="menu-line menu-line-long"></span>
+                        <span class="menu-line menu-line-medium"></span>
+                    </div>
+                </div>
+                
+                
+            </nav>
+        
+            <!-- Full Screen Menu Modal -->
+            <div class="menu-modal" id="menuModal">
+                <div class="left-section" id="leftSection">
+                    <!-- Default content for the left section -->
+                    <h1>Our Impact</h1>
+                    <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                        website development services. Our dedicated team specializes in crafting captivating web experiences
+                        that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                        marketing strategies, or exceptional branding services, we've got you covered</p>
+                </div>
+                <div class="right-section">
+                    <ul class="menu-list" style="font-weight: 250;">
+                        <li data-target="impactContent">Impact</li>
+                        <li data-target="testimonialsContent">Testimonials</li>
+                        <li data-target="clientsContent">Clients</li>
+                        <li data-target="insightsContent">Insights</li>
+                        <li data-target="contactContent">Contact</li>
+                    </ul>
+                </div>
+                <span class="close-modal" id="closeModal">&times;</span>
+            </div>
+    
+            <!-- Testimonial Content (Hidden by Default) -->
+            <div class="hidden-content" id="testimonialsContent">
+                <section class="container my-5">
+                    <h1>Testimonials</h1>
+                    <div class="row">
+                        <!-- Testimonial 1 -->
+                        <div class="col-md-12 mb-3">
+                            <div class="card border-0 shadow-sm p-3" style="background-color: transparent; color: #FFFFFF;">
+                                <div class="card-body">
+                                    <p class="text-white">"Great service—reliable, efficient, and budget-friendly, making them an excellent choice for any project!
+                                        "</p>
+                                    <h5 class="text-white">- Arundas P R</h5>
+                                    <div class="text-warning">
+                                        <!-- 5 Static Stars -->
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small class="text-secondary">Posted on Google</small>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Testimonial 2 -->
+                        <div class="col-md-12 mb-3">
+                            <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                                <div class="card-body">
+                                    <p class="text-white">"Very good service. Very good experience with the team."</p>
+                                    <h5 class="text-white">- MAMAMIA LIFE SOLUTIONS PVT LTD</h5>
+                                    <div class="text-warning">
+                                        <!-- 5 Static Stars -->
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small class="text-secondary">Posted on Google</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="card border-0 shadow-sm p-3"style="background-color: transparent; color: #FFFFFF;">
+                                <div class="card-body">
+                                    <p class="text-white">"Aswm designs  with affordable  Packages"</p>
+                                    <h5 class="text-white">- Tshproi School of Creative and Technical Stuides</h5>
+                                    <div class="text-warning">
+                                        <!-- 5 Static Stars -->
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small class="text-secondary">Posted on Google</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Add more testimonials as needed -->
+            </div>
+    
+            <!-- Impact Content (Hidden by Default) -->
+            <div class="hidden-content" id="impactContent">
+                <h1>Our Impact</h1>
+                <p>Welcome to the forefront of digital excellence, your one-stop destination for expert web design and
+                    website development services. Our dedicated team specializes in crafting captivating web experiences
+                    that engage and convert visitors. Whether you're seeking top-tier web development, tailored digital
+                    marketing strategies, or exceptional branding services, we've got you covered.</p>
+    
+            </div>
+            <div class="hidden-content" id="clientsContent">
+                <h1>Our Clients</h1>
+    
+                <div class="container mt-5">
+                    <div class="row text-center">
+                        {% for logo in logos %}
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <img src="{{ logo.image.url }}" alt="{{ logo.alt_text }}" class="img-fluid" width="100px">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+    
+    
+            </div>
+            
+            <div class="hidden-content" id="insightsContent">
+                <h1>Our Insight</h1>
+                <div class="container mt-5">
+                    <div class="row">
+                        {% for blog in bloge %}
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="blog-card p-3">
+                                {% if blog.image %}
+                                <a href="{% url 'blog_details' blog.id blog.slug %}">
+                                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-image">
+                                </a>
+                                    
+                                {% else %}
+                                    <p>No Image</p>
+                                {% endif %}
+                                <a href="{% url 'blog_details' blog.id blog.slug %}" style="text-decoration: none; color: #FFFFFF;">
+                                    <div class="blog-title mt-3" style="font-size: 1.4rem; font-weight: 250;">{{ blog.title }}</div>
+                
+                                </a>
+                                <div class="blog-meta d-flex justify-content-between mt-3">
+                                    <div class="blog-author" style="font-weight: 250;"><strong>Author:</strong> {{ blog.author }}</div>
+                                    <div class="blog-date" style="font-weight: 250;">{{ blog.created_at|date:"d/m/Y" }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-content" id="contactContent">
+                <h1>Our Contact</h1>
+                <p>Please feel free to share your thoughts and we can discuss it over a cup of tea.</p>
+                    <a href="{% url 'contact_us' %}" class="btn custom-contact-button">Contact Us</a>
+                    <div class="container mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <div class="contact-info-container">
+                                    <div class="contact-info">
+                                        <p style="font-size: 32px;">+91 80756 08837</p>
+                                        <p style="font-size: 32px;">info@softverses.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+    
+    
+            </div>
+    
+        <!-- Add similar content for Clients, Partnership, Insights, and Contact -->
+    
+</header>
+
+
+<!-- Hero Section -->
+<div class="about-section">
+    <div class="container position-relative text-center">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="about-heading">Web Development</h1>
+            </div>
+        </div>
+        <div class="floating-image left-image">
+            <img src="{% static 'images/ball.png' %}" alt="Left Image" class="img-fluid">
+        </div>
+        <div class="floating-image right-image">
+            <img src="{% static 'images/halfball.png' %}" alt="Right Image" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center" style="margin-top: 90px;">
+    <h1 class="mb-4" style="color: #fff; font-weight: 400;">Fields of Expertise</h1>
+    <p class="mb-5" style="color: #fff; font-weight: 275; text-align: justify;">
+        We adopt a rapid and reliable approach with the best <strong>Website Design</strong> services 
+        for organisations to achieve their business goals. Eager to know what our expertise can 
+        contribute to your business? Here we go!
+    </p>
+    <h2 class="text-center mb-4" style="color: #9519C1;">Services</h2>
+    <div class="row text-center mt-5">
+
+        <!-- Card 1 -->
+        <div class="col-md-4 pt-5">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-shopping-cart fa-3x text-white mb-3"></i> <!-- Icon for E-commerce Website Design -->
+                </div>
+                <h2 class="card-title">E-commerce Website Design</h2>
+                <p class="card-text mt-3" style="font-weight: 275;">
+                    We improve your online capability by providing functional 
+                    E-commerce website design services
+                </p>
+            </div>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4 pt-5">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-briefcase fa-3x text-white mb-3"></i> <!-- Icon for Corporate Website Design -->
+                </div>
+                <h2 class="card-title">Corporate Website Design</h2>
+                <p class="card-text mt-3" style="font-weight: 275;">
+                    As a top corporate web design company, we project the objectives your brand represents 
+                    and align them with your services and offerings.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4 pt-5">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-chart-pie fa-3x text-white mb-3"></i> <!-- Icon for Applications & Dashboard -->
+                </div>
+                <h2 class="card-title">Applications & Dashboard</h2>
+                <p class="card-text mt-3" style="font-weight: 275;">
+                    We provide web app design services that focus on solving business problems and meeting user needs.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4 pt-5">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-paint-brush fa-3x text-white mb-3"></i> <!-- Icon for Custom Website Design -->
+                </div>
+                <h2 class="card-title">Custom Website Design</h2>
+                <p class="card-text mt-3" style="font-weight: 275;">
+                    We provide web app design services that focus on solving business problems and meeting user needs.
+                </p>
+            </div>
+        </div>
+    
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4 pt-5">
+            <div class="card-body">
+                <div class="mb-3">
+                    <i class="fas fa-sync-alt fa-3x text-white mb-3"></i> <!-- Icon for Redesign and Website Revamp -->
+                </div>
+                <h2 class="card-title">Redesign and Website Revamp</h2>
+                <p class="card-text mt-3" style="font-weight: 275;">
+                    We provide web app design services that focus on solving business problems and meeting user needs.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="gradient-wrapper mt-5">
+    <section class="contact-footer-section mt-5">
+        <div class="container">
+            <!-- Email Section -->
+            <div class="email-section mb-4">
+                <h3 class="contact-email">info@softverses.com</h3>
+            </div>
+    
+            <!-- Social Media Icons Section -->
+            <div class="social-icons-section d-flex justify-content-start mb-4">
+                <a href="https://www.facebook.com/softverses" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/softverses/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/97199449/admin/dashboard/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=918075608837" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.behance.net/softverses" target="_blank" class="social-icon"><i class="fab fa-behance"></i></a>
+            </div>
+    
+            <!-- Description Text -->
+            <div class="footer-text-section mb-4">
+                <p>Discover a full spectrum of services at Softverses IT Solutions, where we excel in web development, digital marketing, and branding to elevate your digital presence.</p>
+            </div>
+    
+            <!-- Horizontal Line -->
+            <div class="footer-line mb-4"></div>
+    
+            <!-- Footer Row -->
+            <div class="d-flex justify-content-between align-items-center copy_section">
+                <p class="footer-copyright m-0">Copyright © 2024. Designed by Softverses</p>
+                <a href="{% url 'terms_and_conditions' %}" class="terms-link">Terms & Conditions</a>
+            </div>
+        </div>
+    </section>
+ </div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarLinks = document.querySelector(".navbar-links");
+
+    navbarToggler.addEventListener("click", function() {
+        navbarLinks.classList.toggle("show");
+    });
+});
+
+
+
+const menuBar = document.getElementById('menuBar');
+const menuModal = document.getElementById('menuModal');
+const closeModal = document.getElementById('closeModal');
+const leftSection = document.getElementById('leftSection');
+
+// Open the modal when the menu icon is clicked
+menuBar.addEventListener('click', () => {
+    menuModal.classList.add('show');
+});
+
+// Close the modal with fade effect
+closeModal.addEventListener('click', () => {
+    menuModal.classList.remove('show');
+});
+
+// Get all menu items from the right section
+const menuItems = document.querySelectorAll('.menu-list li');
+
+// Function to update left section content
+function updateLeftContent(contentId) {
+    const content = document.getElementById(contentId);
+    leftSection.innerHTML = content.innerHTML; // Replace left section with the new content
+}
+
+// Loop through each menu item and add a mouseover event
+menuItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        // Get the target content ID from data-target attribute
+        const targetContentId = item.getAttribute('data-target');
+        updateLeftContent(targetContentId);
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+        // Get the navbar and toggler elements
+        const navbar = document.querySelector('.navbar');
+        const toggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        // Function to toggle the 'scrolled' class based on scroll position
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Toggle background color on toggler click
+        toggler.addEventListener('click', function() {
+            if (!navbarCollapse.classList.contains('show')) {
+                navbar.classList.add('navbar-expanded');
+            } else {
+                navbar.classList.remove('navbar-expanded');
+            }
+        });
+
+        // Remove background color when the menu collapses
+        navbarCollapse.addEventListener('hidden.bs.collapse', function() {
+            navbar.classList.remove('navbar-expanded');
+        });
+
+        // Add background color when the menu is shown
+        navbarCollapse.addEventListener('shown.bs.collapse', function() {
+            navbar.classList.add('navbar-expanded');
+        });
+    });
+
+</script>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+</body>
+</html>
